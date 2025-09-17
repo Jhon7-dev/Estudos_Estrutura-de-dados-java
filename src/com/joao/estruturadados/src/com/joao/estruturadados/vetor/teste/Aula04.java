@@ -1,6 +1,6 @@
 package com.joao.estruturadados.vetor.teste;
 
-import com.joao.estruturadados.vetor.Vetor;
+import com.joao.estruturadados.vetors.Vetor;
 
 public class Aula04 {
 
