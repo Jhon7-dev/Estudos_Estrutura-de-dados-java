@@ -1,16 +1,14 @@
 package com.joao.estruturadados.vetors;
 
-import java.lang.reflect.Array;
-
-public class Lista <T> {
+public class Lista<T> {
 	private T[] elementos;
 	private int tamanho;
- 
-	public Lista(int capacidade,Class<T>tipoClasse) {
-		this.elementos =(T[])Array.newInstance(tipoClasse, capacidade);
+
+	public Lista(int capacidade) {
+		this.elementos = (T[]) new Object[capacidade];
 		this.tamanho = 0; // é o topo
 	}
-	
+
 	// Aula-03
 	// Adicionar elementos
 
@@ -23,11 +21,12 @@ public class Lista <T> {
 			}
 		}
 	}
+
 	// Aumentar a capacidade do vetor
 	private void aumentaCapacidade() {
 		if (this.tamanho == this.elementos.length) {
-			T [] elementosNovos = (T[]) new Object [this.elementos.length * 2];
-			for(int i = 0;i<this.elementos.length;i++) {
+			T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
+			for (int i = 0; i < this.elementos.length; i++) {
 				elementosNovos[i] = this.elementos[i];
 			}
 			this.elementos = elementosNovos;
@@ -78,7 +77,7 @@ public class Lista <T> {
 		for (int i = tamanho - 1; i >= posicao; i--) {
 			elementos[i + 1] = elementos[i];
 		}
-		elementos[posicao] = elemento;
+		elementos[posicao] = (T) elemento;
 		this.tamanho++;
 	}
 
@@ -98,6 +97,17 @@ public class Lista <T> {
 			this.elementos[i] = this.elementos[i + 1];
 		}
 		this.tamanho--;
+	}
+
+	// Aula Exercicio 01(método contém)
+
+	public boolean contem(T elemento) {
+		int pos = busca(elemento);
+		if (pos > -1) {
+			return true;
+		}
+		// return false;
+		return busca(elemento) > -1;// .+0
 	}
 
 	public int getTamanho() {

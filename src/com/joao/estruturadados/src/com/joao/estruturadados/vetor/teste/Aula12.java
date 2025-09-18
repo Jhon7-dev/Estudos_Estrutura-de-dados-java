@@ -23,14 +23,14 @@ public class Aula12 {
 		}else {
 			System.out.println("não existe no array");
 		}
-		int pos = arrayList.indexOf("A");
+		int pos = arrayList.indexOf("A");//encontrar a posição (índice) de um elemento dentro de um array.
 		if(pos>-1) {
 			System.out.println("Elemento existe no array na posição " + pos );
 		}else {
 			System.out.println("Elemento não existe no array");
 		}
 		System.out.println(arrayList.get(4)); // busca por posição no arrayList
-		arrayList.remove(2);
+		arrayList.remove(2); // remove o elemento do vetor
 		System.out.println(arrayList);
 		System.out.println(arrayList.size());
 	}
