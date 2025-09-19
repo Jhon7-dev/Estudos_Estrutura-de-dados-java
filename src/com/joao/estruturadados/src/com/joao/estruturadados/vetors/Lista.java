@@ -8,7 +8,10 @@ public class Lista<T> {
 		this.elementos = (T[]) new Object[capacidade];
 		this.tamanho = 0; // é o topo
 	}
-
+	
+	public Lista() {
+		this(10);
+	}
 	// Aula-03
 	// Adicionar elementos
 
@@ -109,7 +112,7 @@ public class Lista<T> {
 		// return false;
 		return busca(elemento) > -1;// .+0
 	}
-
+	
 	public int getTamanho() {
 		return this.tamanho;
 	}
